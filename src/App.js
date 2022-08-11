@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import Todo from './Todo';
 import 'asagiri';
-
 import './style.css';
 
 export default function App() {
   // input
   const [input, setInput] = useState('');
   // list
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(['init']);
 
   // add todo
   const addTodo = () => {
@@ -15,6 +15,7 @@ export default function App() {
     setInput('');
   };
   console.log(input); // input text
+  console.log(todoList);
 
   const deleteTodo = (index) => {
     setTodoList(todoList.filter((_, idx) => idx !== index));
@@ -30,7 +31,7 @@ export default function App() {
         />
         <button onClick={() => addTodo()}>追加</button>
 
-        {/* <Todo todoList={todoList} deleteTodo={deleteTodo} /> */}
+        <Todo todoList={todoList} deleteTodo={deleteTodo} />
       </selection>
     </div>
   );

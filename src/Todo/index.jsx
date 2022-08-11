@@ -4,10 +4,10 @@ import React from 'react';
 const Todo = ({ todoList, deleteTodo }) => (
   <div>
     {/*受け取ったtodoListを使って表示する*/}
-    {todoList.map((todo, idx) => (
-      <div>
-        {todo}
-        <button onClick={() => deleteTodo(idx)}>削除</button>
+    {todoList.map((todo, id) => (
+      <div className="flex flex-jc-between flex-ai-center">
+        <div>{todo}</div>
+        <button onClick={() => deleteTodo(id)}>削除</button>
       </div>
     ))}
   </div>
